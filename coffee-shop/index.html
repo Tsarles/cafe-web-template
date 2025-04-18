@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Cafe Navigation</title>
+  <link rel="stylesheet" href="src/css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap">
+</head>
+<body class="cn-regular">
+    <div class="top-banner">
+        <p>☕ Discover Our Story & Menu | Order via FoodPanda or Grab!</p>
+    </div>
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo cn-bold">
+            <img src="/api/placeholder/120/40" alt="Cafe Logo">
+            CAFE
+        </div>
+        <ul class="nav-links">
+            <li><a href="#Home" class="cn-bold">Home</a></li>
+            <li><a href="#About" class="cn-bold">About</a></li>
+            <li><a href="Menu.html" class="cn-bold">Menu</a></li>
+            <li><a href="#Reviews" class="cn-bold">Reviews</a></li>
+            <li><a href="#Contacts" class="cn-bold">Contacts</a></li>
+        </ul>
+        <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
+            <span id="theme-icon">🌙</span>
+        </button>
+        <button class="hamburger" id="menu-btn">☰</button>
+    </nav>
+
+<!-- Main Content Area -->
+<div class="main-content">
+  <div class="welcome-image-wrapper">
+  <div class="welcome-section">
+    <div class="welcome-image-wrapper">
+      <img src="/src/images/main-bg.jpg" alt="Cafe Image" class="welcome-image" />
+      <div class="welcome-text">
+        <h1 class="cn-bold">Welcome to our Cafe</h1>
+        <p class="cn-regular">This is a placeholder for your main content.</p>
+      </div>
+    </div>
+
+    <!-- Order Via Section directly below image -->
+    <div class="order-options">
+      <h3 class="order-title cn-bold">Order Via:</h3>
+      <div class="order-buttons full-width-buttons">
+        <button class="order-button">
+          <img src="src/images/foodpanda-btn.jpeg" alt="FoodPanda" />
+        </button>
+        <button class="order-button">
+          <img src="src/images/grab-btn.jpeg" alt="Grab" />
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Mobile Navigation Modal -->
+    <div class="modal" id="mobile-nav">
+        <div class="modal-content">
+            <button class="close-btn" id="close-btn">✕</button>
+            <ul class="mobile-nav-links">
+                <li><a href="#Home" class="cn-bold">Home</a></li>
+                <li><a href="#About" class="cn-bold">About</a></li>
+                <li><a href="Menu.html" class="cn-bold">Menu</a></li>
+                <li><a href="#Reviews" class="cn-bold">Reviews</a></li>
+                <li><a href="#Contacts" class="cn-bold">Contacts</a></li>
+            </ul>
+            <div class="mobile-order-options">
+                <h3 class="order-title cn-bold">Order Via:</h3>
+                <div class="mobile-order-buttons">
+                    <button class="order-button">
+                        <img src="/src/images/foodpanda-btn.jpeg" alt="FoodPanda">
+                    </button>
+                    <button class="order-button">
+                        <img src="/src/images/grab-btn.jpeg" alt="Grab">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer cn-regular">
+        <p>© 2025 Cafe.</p>
+    </footer>
+<script src="src/js/main.js"></script>
+</body>
+</html>
