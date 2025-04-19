@@ -3,90 +3,221 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modern Cafe Navigation</title>
+  <title>Cafe Brew</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
   <link rel="stylesheet" href="src/css/style.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap">
 </head>
-<body class="cn-regular">
-    <div class="top-banner">
-        <p>☕ Discover Our Story & Menu | Order via FoodPanda or Grab!</p>
-    </div>
-    
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="logo cn-bold">
-            <img src="/api/placeholder/120/40" alt="Cafe Logo">
-            CAFE
-        </div>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Brew Haven</div>
         <ul class="nav-links">
-            <li><a href="#Home" class="cn-bold">Home</a></li>
-            <li><a href="#About" class="cn-bold">About</a></li>
-            <li><a href="Menu.html" class="cn-bold">Menu</a></li>
-            <li><a href="#Reviews" class="cn-bold">Reviews</a></li>
-            <li><a href="#Contacts" class="cn-bold">Contacts</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#featured">Featured Brews</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <button id="theme-toggle" class="theme-toggle">
+              <span class="light-icon">🌞</span>
+              <span class="dark-icon">🌙</span>
+            </button>
+          </li>
         </ul>
-        <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
-            <span id="theme-icon">🌙</span>
-        </button>
-        <button class="hamburger" id="menu-btn">☰</button>
-    </nav>
+        <div class="menu-toggle">☰</div>
+      </nav>
+    </div>
+  </header>
 
-<!-- Main Content Area -->
-<div class="main-content">
-  <div class="welcome-image-wrapper">
-  <div class="welcome-section">
-    <div class="welcome-image-wrapper">
-      <img src="/src/images/main-bg.jpg" alt="Cafe Image" class="welcome-image" />
-      <div class="welcome-text">
-        <h1 class="cn-bold">Welcome to our Cafe</h1>
-        <p class="cn-regular">This is a placeholder for your main content.</p>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Artisanal Coffee Experience</h1>
+        <p>Discover the perfect blend of flavor and ambiance at Brew Haven, where every cup tells a story of passion and craftsmanship.</p>
+        <a href="#featured" class="btn">Explore Best Brews</a>
+        <div class="order-buttons">
+          <a href="#" class="btn btn-secondary foodpanda-btn">Food Panda</a>
+          <a href="#" class="btn btn-secondary grab-btn">Grab</a>
+        </div>
       </div>
     </div>
+    <div class="hero-img">
+      <img src="src/images/bg.png" alt="Coffee being poured into a cup">
+    </div>  
+  </section>
 
-    <!-- Order Via Section directly below image -->
-    <div class="order-options">
-      <h3 class="order-title cn-bold">Order Via:</h3>
-      <div class="order-buttons full-width-buttons">
-        <button class="order-button">
-          <img src="src/images/foodpanda-btn.jpeg" alt="FoodPanda" />
-        </button>
-        <button class="order-button">
-          <img src="src/images/grab-btn.jpeg" alt="Grab" />
-        </button>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <h2 class="section-title">Our Story</h2>
+      <div class="about-content">
+        <div class="about-img">
+          <img src="src/images/about.png" alt="Coffee shop interior">
+        </div>
+        <div class="about-text">
+          <h2>Crafting Moments Since 2015</h2>
+          <p>Brew Haven was born from a simple passion: to create a space where quality coffee brings people together. Our journey began with a small roastery and has evolved into a sanctuary for coffee lovers.</p>
+          <p>We source our beans ethically from sustainable farms around the world, ensuring that every cup you enjoy supports fair practices and exceptional quality.</p>
+          <p>Our baristas are artisans who take pride in perfecting every brew, creating not just a beverage, but an experience to savor.</p>
+          <div class="button-group">
+            <a href="#contact" class="btn">Get in Touch</a>
+            <a href="#team" class="btn btn-secondary">Meet Our Team</a>
+          </div>
+        </div>
       </div>
+    </div>
+  </section>
+
+  
+  <!-- Featured Coffee Section -->
+  <section class="featured" id="featured">
+    <div class="container">
+      <h2 class="section-title">Our Featured Brews</h2>
+      <div class="coffee-grid">
+        <div class="coffee-card">
+          <div class="coffee-img">
+            <img src="/src/images/coffee1.png" alt="Espresso">
+          </div>
+          <div class="coffee-info">
+            <h3>Classic Espresso</h3>
+            <div class="price">$3.50</div>
+            <p>Rich and robust single-origin espresso with notes of chocolate and hazelnut.</p>
+          </div>
+        </div>
+        <div class="coffee-card">
+          <div class="coffee-img">
+            <img src="/src/images/coffee2.png" alt="Cappuccino">
+          </div>
+          <div class="coffee-info">
+            <h3>Iced mocha</h3>
+            <div class="price">$4.25</div>
+            <p>Perfect balance of espresso, steamed milk, and velvety foam.</p>
+          </div>
+        </div>
+        <div class="coffee-card">
+          <div class="coffee-img">
+            <img src="src/images/coffee3.png" alt="Pour Over">
+          </div>
+          <div class="coffee-info">
+            <h3>Pour Over</h3>
+            <div class="price">$4.75</div>
+            <p>Hand-crafted pour over highlighting the complex flavor profile of our seasonal beans.</p>
+          </div>
+        </div>
+      </div>
+      <div class="featured-cta">
+        <a href="#" class="btn">Check Out Our Other Products</a>
+      </div>
+    </div>
+  </section>
+
+<!-- Reviews Section -->  
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <h2 class="section-title">Reviews</h2>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <p>"Absolutely love their mocha—smooth, rich, and balanced. Best in town!"</p>
+          <h4>- Carla, Coffee Enthusiast</h4>
+        </div>
+        <div class="review-card">
+          <p>"Perfect ambiance and quality brews. My go-to café every morning."</p>
+          <h4>- Miguel, Regular Customer</h4>
+        </div>
+        <div class="review-card">
+          <p>"Grab delivery was super fast and the coffee was still warm. Impressed!"</p>
+          <h4>- Jenna, First-Time Buyer</h4>
+        </div>
+        <div class="featured-cta">
+            <button class="btn" id="open-review-modal">Write a Review</button>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Review Modal -->
+<div class="review-modal-overlay" id="review-modal">
+    <div class="review-modal">
+      <div class="modal-header">
+        <h3>Share Your Experience</h3>
+        <button class="close-modal" id="close-review-x">&times;</button>
+      </div>
+      <form id="review-form">
+        <div class="form-group">
+          <label for="reviewer-name">Name</label>
+          <input type="text" id="reviewer-name" required placeholder="e.g. Carla">
+        </div>
+        <div class="form-group">
+          <label for="reviewer-email">Gmail</label>
+          <input type="email" id="reviewer-email" required placeholder="yourname@gmail.com">
+        </div>
+        <div class="form-group">
+          <label for="review-message">Your Review</label>
+          <textarea id="review-message" maxlength="300" required placeholder="Type your experience here... (max 300 characters)"></textarea>
+        </div>
+        <div class="modal-actions">
+          <button type="submit" class="submit-btn">Submit Review</button>
+          <button type="button" class="cancel-button" id="close-review-modal">Cancel</button>
+        </div>
+      </form>
     </div>
   </div>
-</div>
+  
 
-    <!-- Mobile Navigation Modal -->
-    <div class="modal" id="mobile-nav">
-        <div class="modal-content">
-            <button class="close-btn" id="close-btn">✕</button>
-            <ul class="mobile-nav-links">
-                <li><a href="#Home" class="cn-bold">Home</a></li>
-                <li><a href="#About" class="cn-bold">About</a></li>
-                <li><a href="Menu.html" class="cn-bold">Menu</a></li>
-                <li><a href="#Reviews" class="cn-bold">Reviews</a></li>
-                <li><a href="#Contacts" class="cn-bold">Contacts</a></li>
-            </ul>
-            <div class="mobile-order-options">
-                <h3 class="order-title cn-bold">Order Via:</h3>
-                <div class="mobile-order-buttons">
-                    <button class="order-button">
-                        <img src="/src/images/foodpanda-btn.jpeg" alt="FoodPanda">
-                    </button>
-                    <button class="order-button">
-                        <img src="/src/images/grab-btn.jpeg" alt="Grab">
-                    </button>
-                </div>
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact Us</h2>
+      <div class="contact-content">
+        <div class="contact-form">
+          <form>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" placeholder="Your name">
             </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="Your email">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" placeholder="How can we help you?"></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message</button>
+          </form>
         </div>
+        <div class="contact-info">
+          <h3>Visit Our Coffee Shop</h3>
+          <div class="contact-details">
+            <p><span>📍</span> 123 Coffee Street, Beanville, BV 12345</p>
+            <p><span>📞</span> (555) 123-4567</p>
+            <p><span>✉️</span> hello@brewhaven.com</p>
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook">fb</a>
+                <a href="#" aria-label="Instagram">ig</a>
+              </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000!2d-122.4194!3d37.7749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM03CsDA0JzUzLjYiTiAxMjLCsDI1JzA5LjgiVw!5e0!3m2!1sen!2sus!4v1650000000000!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+          </div>
+        </div>
+      </div>
+     
     </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="footer cn-regular">
-        <p>© 2025 Cafe.</p>
-    </footer>
-<script src="src/js/main.js"></script>
+  <!-- Footer -->
+  <footer>
+      <div class="copyright">
+        &copy; 2025 Brew Haven. All rights reserved.
+      </div>
+  </footer>
+  <script src="src/js/main.js"></script>
 </body>
 </html>
